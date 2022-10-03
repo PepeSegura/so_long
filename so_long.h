@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 18:01:35 by psegura-          #+#    #+#             */
-/*   Updated: 2022/09/30 13:14:33 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/03 04:33:14 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,14 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <string.h>
 //Open
 # include <fcntl.h>
 
 //Get_next_line
-# include "get_next_line_bonus.h"
+# include "get_next_line.h"
 
-typedef struct	s_data {
+typedef struct s_data {
 	void	*img;
 	char	*addr;
 	int		bits_per_pixel;
@@ -38,10 +39,11 @@ void	ft_leaks(void);
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 int		close_win(int keycode);
 
-
 //Map Validator
-int	ft_map_height(void);
-int	ft_map_wide(void);
-int	ft_line_lenght(char *line);
+int		ft_valid_map(void);
+int		ft_map_height(void);
+int		ft_map_wide(void);
+int		ft_line_lenght(char *line);
+int		ft_valid_lines(void);
 
 #endif

@@ -1,9 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/30 18:23:26 by psegura-          #+#    #+#             */
+/*   Updated: 2022/10/03 14:53:59 by psegura-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 void	ft_leaks(void)
 {
 	system("leaks a.out");
 }
+
 
 int	main(void)
 {
@@ -12,12 +25,18 @@ int	main(void)
 	t_data	img;
 	int		x;
 	int		y;
+	int		map_wide;
+	int		map_height;
 
 	x = 0;
 	y = 0;
 
-	x = ft_map_wide();
-	printf("%d", x);
+	map_wide = ft_map_wide();
+	map_height = ft_map_height();
+	if (ft_valid_lines() == -1)
+		return (0);
+	printf("\nMap is %d pixels wide", map_wide);
+	printf("\nMap is %d pixels ", map_height);
 	mlx = mlx_init();
 	mlx_win = mlx_new_window(mlx, 1920, 1080, "Titulo de la ventana");
 	img.img = mlx_new_image(mlx, 1920, 1080);
@@ -26,11 +45,11 @@ int	main(void)
 	{
 		while (x < 1920)
 		{
-			my_mlx_pixel_put(&img, x, y, 0x00282a36);
+			my_mlx_pixel_put(&img, x, y, 0x00FF0000);
 			x++;
 		}
-		x = 0;
-		y++;
+	 	x = 0;
+	 	y++;
 	}
 	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
 	mlx_key_hook(mlx_win, close_win, &mlx_win);

@@ -6,13 +6,13 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 18:54:22 by psegura-          #+#    #+#             */
-/*   Updated: 2022/09/09 01:02:44 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/05 23:50:48 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "./include/get_next_line_bonus.h"
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	int	i;
 

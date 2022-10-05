@@ -1,49 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   libs.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/28 18:01:35 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/03 04:33:14 by psegura-         ###   ########.fr       */
+/*   Created: 2022/10/05 23:18:22 by psegura-          #+#    #+#             */
+/*   Updated: 2022/10/05 23:21:56 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef LIBS_H
+# define LIBS_H
 
+//Minilib
 # include <mlx.h>
+
+//Write, Printf & Read
 # include <unistd.h>
 # include <stdio.h>
+
+//Malloc
 # include <stdlib.h>
-# include <string.h>
+
 //Open
 # include <fcntl.h>
-
-//Get_next_line
-# include "get_next_line.h"
-
-typedef struct s_data {
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-}	t_data;
-
-//Leaks
-void	ft_leaks(void);
-
-//Funciones
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
-int		close_win(int keycode);
-
-//Map Validator
-int		ft_valid_map(void);
-int		ft_map_height(void);
-int		ft_map_wide(void);
-int		ft_line_lenght(char *line);
-int		ft_valid_lines(void);
 
 #endif

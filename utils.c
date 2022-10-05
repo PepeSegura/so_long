@@ -6,11 +6,11 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 18:23:24 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/03 14:20:51 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/06 00:05:52 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "./include/so_long.h"
 
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
@@ -41,50 +41,27 @@ int	ft_line_lenght(char *line)
 	return (i);
 }
 
-int	ft_map_height(void)
+char	*ft_strdup(const char *s1)
 {
-	int		fd;
-	char	*line;
-	int		lineas;
+	size_t	size;
+	size_t	i;
+	char	*s2;
 
-	lineas = 0;
-	line = "Hola";
-	fd = open("./mapa", O_RDONLY);
-	while (line != NULL)
+	size = ft_strlen(s1);
+	s2 = malloc(sizeof(char) * (size + 1));
+	if (!s2)
+		return (NULL);
+	i = 0;
+	while (s1[i])
 	{
-		line = get_next_line(fd);
-		if (line && line[0] == '\n')
-			lineas--;
-		lineas++;
-		free(line);
+		s2[i] = s1[i];
+		i++;
 	}
-	if (line == NULL)
-		lineas--;
-	close(fd);
-	return (lineas);
+	s2[i] = '\0';
+	return (s2);
 }
 
-int	ft_map_wide(void)
+void	ft_leaks(void)
 {
-	int		fd;
-	char	*line;
-	int		size_line;
-
-	size_line = 0;
-	line = "Hola";
-	fd = open("./mapa", O_RDONLY);
-	while (line != NULL)
-	{
-		line = get_next_line(fd);
-		if (line)
-		{
-			size_line = ft_line_lenght(line);
-			// printf("%d\t", size_line);
-		}
-		if (line != NULL)
-			printf("%s", line);
-		free(line);
-	}
-	close(fd);
-	return (size_line);
+	system("leaks a.out");
 }

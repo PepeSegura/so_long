@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 18:54:30 by psegura-          #+#    #+#             */
-/*   Updated: 2022/09/09 00:57:44 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/05 23:50:59 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_get_stash(int fd, char *stash);
 //Utils
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strjoin(char *stash, char *buffer);
-int		ft_strlen(char *str);
+int		ft_strlen(const char *str);
 char	*ft_strchr(char *str, int c);
 
 #endif

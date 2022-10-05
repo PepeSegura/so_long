@@ -6,11 +6,11 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 18:23:26 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/03 14:53:59 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/05 18:51:57 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "./include/so_long.h"
 
 void	ft_leaks(void)
 {

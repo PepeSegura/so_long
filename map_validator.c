@@ -6,13 +6,13 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 02:48:41 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/06 00:04:37 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/06 03:40:49 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/so_long.h"
 
-int	ft_valid_lines(void)
-{
+// int	ft_valid_lines(void)
+// {
 
-}
+// }

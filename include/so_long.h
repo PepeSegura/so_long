@@ -6,37 +6,21 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 18:01:35 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/06 00:31:10 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/06 03:37:25 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-
-
 //Header files
 # include "so_long.h"
 # include "libs.h"
 # include "define.h"
+# include "structures.h"
 
 //Get_next_line
 # include "get_next_line_bonus.h"
-
-typedef struct s_data {
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-}	t_data;
-
-//Map & data map
-typedef struct s_map {	
-	char	**matrix;
-	int		wide;
-	int		height;
-}	t_map;
 
 //Leaks
 void	ft_leaks(void);

@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 21:09:36 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/06 00:30:17 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/06 04:08:20 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,7 @@ static char	**ft_free(char **matrix, int i)
 
 int	ft_open_map(char *path)
 {
-	int	fd;
-
-	fd = open(path, O_RDONLY);
-	return (fd);
+	return (open(path, O_RDONLY));
 }
 
 int	ft_get_map_size(int fd, t_map *map)
@@ -72,10 +69,9 @@ char	**ft_store_map(int fd, t_map *map)
 	i = 0;
 	while (i < map->height)
 	{
-		map->matrix[i] = (char *) malloc(sizeof(char) * map->wide + 1);
+		map->matrix[i] = get_next_line(fd);
 		if (!map->matrix[i])
 			return (ft_free(map->matrix, i));
-		map->matrix[i] = get_next_line(fd);
 		i++;
 	}
 	ft_leaks();
@@ -95,7 +91,6 @@ int	main(int argc, char **argv)
 	printf("Map wide -> %d\n", map.wide);
 	printf("Map height -> %d\n", map.height);
 	map.matrix = ft_store_map(ft_open_map(argv[1]), &map);
-	
 	while (map.matrix[i])
 	{
 		printf("%s", map.matrix[i]);

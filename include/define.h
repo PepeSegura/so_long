@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 23:11:20 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/05 23:24:04 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/06 03:32:54 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,14 @@
 
 //Errores
 # define INVALID_MAP -1
+
+//Map char
+# define VALID_CHARS		"01CEP"
+# define EMPTY_CHAR			'0'
+# define WALL_CHAR			'1'
+# define COLLECTIBLE_CHAR	'C'
+# define EXIT_CHAR			'E'
+# define PLAYER_CHAR		'P'
+
 
 #endif

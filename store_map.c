@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 21:09:36 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/06 04:08:20 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/06 13:12:59 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ int	ft_get_map_size(int fd, t_map *map)
 
 char	**ft_store_map(int fd, t_map *map)
 {
-	char	*line;
 	int		i;
 
 	map->matrix = (char **)malloc(sizeof(char **) * map->height + 1);
@@ -74,28 +73,28 @@ char	**ft_store_map(int fd, t_map *map)
 			return (ft_free(map->matrix, i));
 		i++;
 	}
-	ft_leaks();
+	// ft_leaks();
 	close(fd);
 	return (map->matrix);
 }
 
-int	main(int argc, char **argv)
-{
-	t_map	map;
-	int		i;
+// int	main(int argc, char **argv)
+// {
+// 	t_map	map;
+// 	int		i;
 
-	i = 0;
-	if (argc != 2)
-		printf("Argumentos invalidos");
-	ft_get_map_size(ft_open_map(argv[1]), &map);
-	printf("Map wide -> %d\n", map.wide);
-	printf("Map height -> %d\n", map.height);
-	map.matrix = ft_store_map(ft_open_map(argv[1]), &map);
-	while (map.matrix[i])
-	{
-		printf("%s", map.matrix[i]);
-		free(map.matrix[i]);
-		i++;
-	}
-	return (0);
-}
+// 	i = 0;
+// 	if (argc != 2)
+// 		printf("Argumentos invalidos");
+// 	ft_get_map_size(ft_open_map(argv[1]), &map);
+// 	printf("Map wide -> %d\n", map.wide);
+// 	printf("Map height -> %d\n", map.height);
+// 	map.matrix = ft_store_map(ft_open_map(argv[1]), &map);
+// 	while (map.matrix[i])
+// 	{
+// 		printf("%s", map.matrix[i]);
+// 		free(map.matrix[i]);
+// 		i++;
+// 	}
+// 	return (0);
+// }

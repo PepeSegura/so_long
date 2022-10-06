@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 18:01:35 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/06 03:37:25 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/06 13:09:59 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,12 @@ int		close_win(int keycode);
 //Funciones Auxiliares
 char	*ft_strdup(const char *s1);
 
+//Open & Store Map
+int		ft_open_map(char *path);
+int		ft_get_map_size(int fd, t_map *map);
 //Map Validator
-int		ft_valid_map(void);
-int		ft_map_height(int fd);
-int		ft_map_wide(void);
 int		ft_line_lenght(char *line);
-int		ft_valid_lines(void);
+void	ft_valid_lines(t_map *map);
+void	ft_print_error(int error_code, char *error_message);
 
 #endif

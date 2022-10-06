@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 03:36:31 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/06 03:42:41 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/06 12:15:36 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,17 @@ typedef struct s_data {
 	int		endian;
 }	t_data;
 
-typedef struct s_size {
-	int		x;
-	int		y;
+// typedef struct s_size {
+// 	int		x;
+// 	int		y;
 	
-}	t_size;
+// }	t_size;
 
 //Map & data map
 typedef struct s_map {	
 	char	**matrix;
 	int		wide;
 	int		height;
-	t_size	size;
 }	t_map;
 
 //Map requiriments

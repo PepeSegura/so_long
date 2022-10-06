@@ -6,7 +6,7 @@
 #    By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 13:27:49 by psegura-          #+#    #+#              #
-#    Updated: 2022/10/05 18:55:28 by psegura-         ###   ########.fr        #
+#    Updated: 2022/10/06 13:12:26 by psegura-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRCS =	\
 		get_next_line_utils_bonus.c \
 		utils.c	\
 		map_validator.c	\
+		store_map.c	\
 
 OBJS_DIR = objs/
 OBJS = $(SRCS:.c=.o)

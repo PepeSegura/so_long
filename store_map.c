@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 21:09:36 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/06 13:12:59 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/08 16:37:40 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	ft_get_map_size(int fd, t_map *map)
 			map->height++;
 			if (map->wide != ft_line_lenght(line))
 			{
-				printf("\nMap Invalid");
+				printf("Map Invalid\n");
 				return (INVALID_MAP);
 			}
 			free(line);

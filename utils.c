@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 18:23:24 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/06 00:05:52 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/08 19:05:11 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 	*(unsigned int *)dst = color;
 }
 
-// int	close_win(int keycode, void *mlx)
-		// mlx_destroy_window(mlx, mlx);
 int	close_win(int keycode)
 {
 	if (keycode == 53)
@@ -59,9 +57,4 @@ char	*ft_strdup(const char *s1)
 	}
 	s2[i] = '\0';
 	return (s2);
-}
-
-void	ft_leaks(void)
-{
-	system("leaks a.out");
 }

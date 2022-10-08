@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 18:23:26 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/05 18:51:57 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/08 19:37:08 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,41 +17,57 @@ void	ft_leaks(void)
 	system("leaks a.out");
 }
 
+void
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	void	*mlx;
-	void	*mlx_win;
+	t_meta	meta;
 	t_data	img;
-	int		x;
-	int		y;
-	int		map_wide;
-	int		map_height;
+	t_map	map;
 
-	x = 0;
-	y = 0;
+	void	*xpm_circulo;
+	char	*relative_path = "./sprites/xpm/circulo50.xpm";
 
-	map_wide = ft_map_wide();
-	map_height = ft_map_height();
-	if (ft_valid_lines() == -1)
-		return (0);
-	printf("\nMap is %d pixels wide", map_wide);
-	printf("\nMap is %d pixels ", map_height);
-	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, 1920, 1080, "Titulo de la ventana");
-	img.img = mlx_new_image(mlx, 1920, 1080);
+	meta.x = 0;
+	meta.y = 0;
+
+	if (argc != 2)
+		printf("Argumentos invalidos\n");
+	//Get MAPA size
+	ft_get_map_size(ft_open_map(argv[1]), &map);
+	printf("Map wide -> %d\n", map.wide);
+	printf("Map height -> %d\n", map.height);
+	//Get WINDOW size
+	meta.win_w = map.wide * XPM_SIZE;
+	meta.win_h = map.height * XPM_SIZE;
+	printf("Window wide -> %d\n", meta.win_w);
+	printf("Window height -> %d\n", meta.win_h);
+	
+	//Start Mlx
+	meta.mlx = mlx_init();
+	//Create Window	
+	meta.mlx_win = mlx_new_window(meta.mlx, meta.win_w, meta.win_h, "Titulo de la ventana");
+	//Background Color
+	img.img = mlx_new_image(meta.mlx, 1920, 1080);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
-	while (y < 1080)
+	//Sprite
+	xpm_circulo = mlx_xpm_file_to_image(meta.mlx, relative_path, &meta.img_w, &meta.img_h);
+	//Background Color
+	while (meta.y < meta.win_h)
 	{
-		while (x < 1920)
+		while (meta.x < meta.win_w)
 		{
-			my_mlx_pixel_put(&img, x, y, 0x00FF0000);
-			x++;
+			my_mlx_pixel_put(&img, meta.x, meta.y, 0x000000F0);
+			meta.x++;
 		}
-	 	x = 0;
-	 	y++;
+	 	meta.x = 0;
+	 	meta.y++;
 	}
-	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
-	mlx_key_hook(mlx_win, close_win, &mlx_win);
-	// mlx_loop(mlx);
+	//Sprite
+	mlx_put_image_to_window(meta.mlx, meta.mlx_win, img.img, 0, 0);
+	//Background
+	mlx_put_image_to_window(meta.mlx, meta.mlx_win, xpm_circulo, 0, 0);
+	//Hook Keypress
+	mlx_key_hook(meta.mlx_win, close_win, &meta.mlx_win);
+	mlx_loop(meta.mlx);
 }

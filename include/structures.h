@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 03:36:31 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/06 12:15:36 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/08 18:42:46 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,6 @@ typedef struct s_data {
 	int		endian;
 }	t_data;
 
-// typedef struct s_size {
-// 	int		x;
-// 	int		y;
-	
-// }	t_size;
-
 //Map & data map
 typedef struct s_map {	
 	char	**matrix;
@@ -38,7 +32,25 @@ typedef struct s_map {
 typedef struct s_requiriments {
 	int		wide;
 	int		height;
-	// char	
+	int		EMPTY_CHAR_COUNT;
+	int		WALL_CHAR_COUNT;
+	int		COLLECTIBLE_CHAR_COUNT;
+	int		EXIT_CHAR_COUNT;
+	int		PLAYER_CHAR_COUNT;
 }	t_requiriments;
+
+//Meta
+typedef struct s_meta {
+	void	*mlx;
+	void	*mlx_win;
+	int		img_w;
+	int		img_h;
+	int		x;
+	int		y;
+	int		win_w;
+	int		win_h;
+}	t_meta;
+
+//Sprites
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 03:36:31 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/08 18:42:46 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/09 00:51:56 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,12 @@ typedef struct s_meta {
 }	t_meta;
 
 //Sprites
+typedef struct s_img {
+	void	*xpm_empty;
+	void	*xpm_wall;
+	void	*xpm_collectiblle;
+	void	*xpm_exit;
+	void	*xpm_player;
+}	t_img;
 
 #endif

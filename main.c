@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 18:23:26 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/09 01:32:28 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/10 02:25:47 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	main(int argc, char **argv)
 	{
 		while (meta.x < meta.win_w)
 		{
-			my_mlx_pixel_put(&img, meta.x, meta.y, 0x0050bed7);
+			my_mlx_pixel_put(&img, meta.x, meta.y, 0x00755338);
 			meta.x++;
 		}
 	 	meta.x = 0;
@@ -79,16 +79,16 @@ int	main(int argc, char **argv)
 	{
 		while (j < map.wide)
 		{
-			// if (map.matrix[i][j] == EMPTY_CHAR)
-			// 	mlx_put_image_to_window(meta.mlx, meta.mlx_win, draw.xpm_empty, j * XPM_SIZE, i * XPM_SIZE);
-			// if (map.matrix[i][j] == WALL_CHAR)
-			// 	mlx_put_image_to_window(meta.mlx, meta.mlx_win, draw.xpm_wall, j * XPM_SIZE, i * XPM_SIZE);
-			// if (map.matrix[i][j] == COLLECTIBLE_CHAR)
-			// 	mlx_put_image_to_window(meta.mlx, meta.mlx_win, draw.xpm_collectiblle, j * XPM_SIZE, i * XPM_SIZE);
-			// if (map.matrix[i][j] == EXIT_CHAR)
-			// 	mlx_put_image_to_window(meta.mlx, meta.mlx_win, draw.xpm_exit, j * XPM_SIZE, i * XPM_SIZE);
-			// if (map.matrix[i][j] == PLAYER_CHAR)
-			// 	mlx_put_image_to_window(meta.mlx, meta.mlx_win, draw.xpm_player, j * XPM_SIZE, i * XPM_SIZE);
+			if (map.matrix[i][j] == EMPTY_CHAR)
+				mlx_put_image_to_window(meta.mlx, meta.mlx_win, draw.xpm_empty, j * XPM_SIZE, i * XPM_SIZE);
+			if (map.matrix[i][j] == WALL_CHAR)
+				mlx_put_image_to_window(meta.mlx, meta.mlx_win, draw.xpm_wall, j * XPM_SIZE, i * XPM_SIZE);
+			if (map.matrix[i][j] == COLLECTIBLE_CHAR)
+				mlx_put_image_to_window(meta.mlx, meta.mlx_win, draw.xpm_collectiblle, j * XPM_SIZE, i * XPM_SIZE);
+			if (map.matrix[i][j] == EXIT_CHAR)
+				mlx_put_image_to_window(meta.mlx, meta.mlx_win, draw.xpm_exit, j * XPM_SIZE, i * XPM_SIZE);
+			if (map.matrix[i][j] == PLAYER_CHAR)
+				mlx_put_image_to_window(meta.mlx, meta.mlx_win, draw.xpm_player, j * XPM_SIZE, i * XPM_SIZE);
 			printf("%c", map.matrix[i][j]);
 			j++;
 		}

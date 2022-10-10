@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 23:11:20 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/09 00:33:39 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/10 02:30:48 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@
 //XPM
 # define XPM_SIZE	50
 # define EMPTY_PATH			"./sprites/xpm/suelo50.xpm"
-# define WALL_PATH			"./sprites/xpm/wall50.xpm"
-# define COLLECTIBLE_PATH	"./sprites/xpm/circulo50.xpm"
+# define WALL_PATH			"./sprites/xpm/wall50v2.xpm"
+# define COLLECTIBLE_PATH	"./sprites/xpm/up50.xpm"
 # define EXIT_PATH			"./sprites/xpm/cofre50.xpm"
 # define PLAYER_PATH		"./sprites/xpm/player50.xpm"
 

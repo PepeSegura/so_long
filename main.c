@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 18:23:26 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/10 02:25:47 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/10 04:33:36 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,20 +61,34 @@ int	main(int argc, char **argv)
 	draw.xpm_exit = mlx_xpm_file_to_image(meta.mlx, EXIT_PATH, &meta.img_w, &meta.img_h);
 	draw.xpm_player = mlx_xpm_file_to_image(meta.mlx, PLAYER_PATH, &meta.img_w, &meta.img_h);
 	//Background Color
-	while (meta.y < meta.win_h)
-	{
-		while (meta.x < meta.win_w)
-		{
-			my_mlx_pixel_put(&img, meta.x, meta.y, 0x00755338);
-			meta.x++;
-		}
-	 	meta.x = 0;
-	 	meta.y++;
-	}
+	// while (meta.y < meta.win_h)
+	// {
+	// 	while (meta.x < meta.win_w)
+	// 	{
+	// 		my_mlx_pixel_put(&img, meta.x, meta.y, 0x00755338);
+	// 		meta.x++;
+	// 	}
+	//  	meta.x = 0;
+	//  	meta.y++;
+	// }
 	//Background
-	mlx_put_image_to_window(meta.mlx, meta.mlx_win, img.img, 0, 0);
+	// mlx_put_image_to_window(meta.mlx, meta.mlx_win, img.img, 0, 0);
 	
+	//Imprimir fondo de EMPTY_CHAR
+	while (i < map.height)
+	{
+		while (j < map.wide)
+		{
+			mlx_put_image_to_window(meta.mlx, meta.mlx_win, draw.xpm_empty, j * XPM_SIZE, i * XPM_SIZE);
+			j++;
+		}
+		i++;
+		j = 0;
+	}
+
 	//Sprite
+	i = 0;
+	j = 0;
 	while (i < map.height)
 	{
 		while (j < map.wide)

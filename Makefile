@@ -6,11 +6,12 @@
 #    By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 13:27:49 by psegura-          #+#    #+#              #
-#    Updated: 2022/10/10 16:21:36 by psegura-         ###   ########.fr        #
+#    Updated: 2022/10/10 20:21:50 by psegura-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long.a
+EXE = so_long
 
 SRCS =	\
 		get_next_line_bonus.c \
@@ -19,6 +20,8 @@ SRCS =	\
 		map_validator.c	\
 		store_map.c	\
 		movement.c	\
+		input.c		\
+		draw.c	\
 
 OBJS_DIR = objs/
 OBJS = $(SRCS:.c=.o)
@@ -36,6 +39,7 @@ $(OBJS_DIR)%.o : %.c ./include/so_long.h
 $(NAME): $(OBJECTS_PREFIXED)
 	@ar r $(NAME) $(OBJECTS_PREFIXED)
 	@echo "🏂 so_long Done 🏂"
+	$(CC) $(FLAGS) $(FLAGS_MLX) main.c so_long.a -o $(EXE)
 
 all: $(NAME)
 
@@ -44,6 +48,7 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
+	rm -f $(EXE)
 
 re: fclean all
 

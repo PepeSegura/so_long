@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 18:01:35 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/10 16:26:00 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/10 18:58:08 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,9 @@ void	ft_print_error(int error_code, char *error_message);
 
 //Input & movement
 int	ft_input(int keycode, t_meta *meta);
+
+//Pruebas
+void	ft_draw_background(t_map *map, t_img *img, t_meta *meta);
+void	ft_draw_game(t_map *map, t_img *img, t_meta *meta);
 
 #endif

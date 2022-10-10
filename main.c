@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 18:23:26 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/10 16:30:05 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/10 19:37:24 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,8 @@ int	main(int argc, char **argv)
 	t_data	img;
 	t_map	map;
 	t_img	draw;
-	int	i = 0;
-	int	j = 0;
-
-	// void	*xpm_circulo;
-	// char	*relative_path = "./sprites/xpm/circulo50.xpm";
+	// int	i = 0;
+	// int	j = 0;
 
 	meta.x = 0;
 	meta.y = 0;
@@ -63,57 +60,13 @@ int	main(int argc, char **argv)
 	draw.xpm_collectiblle = mlx_xpm_file_to_image(meta.mlx, COLLECTIBLE_PATH, &meta.img_w, &meta.img_h);
 	draw.xpm_exit = mlx_xpm_file_to_image(meta.mlx, EXIT_PATH, &meta.img_w, &meta.img_h);
 	draw.xpm_player = mlx_xpm_file_to_image(meta.mlx, PLAYER_PATH, &meta.img_w, &meta.img_h);
-	//Background Color
-	// while (meta.y < meta.win_h)
-	// {
-	// 	while (meta.x < meta.win_w)
-	// 	{
-	// 		my_mlx_pixel_put(&img, meta.x, meta.y, 0x00755338);
-	// 		meta.x++;
-	// 	}
-	//  	meta.x = 0;
-	//  	meta.y++;
-	// }
-	//Background
-	// mlx_put_image_to_window(meta.mlx, meta.mlx_win, img.img, 0, 0);
 	
 	//Imprimir fondo de EMPTY_CHAR
-	while (i < map.height)
-	{
-		while (j < map.wide)
-		{
-			mlx_put_image_to_window(meta.mlx, meta.mlx_win, draw.xpm_empty, j * XPM_SIZE, i * XPM_SIZE);
-			j++;
-		}
-		i++;
-		j = 0;
-	}
+	ft_draw_background(&map, &draw, &meta);
 
 	//Sprite
-	i = 0;
-	j = 0;
-	while (i < map.height)
-	{
-		while (j < map.wide)
-		{
-			if (map.matrix[i][j] == EMPTY_CHAR)
-				mlx_put_image_to_window(meta.mlx, meta.mlx_win, draw.xpm_empty, j * XPM_SIZE, i * XPM_SIZE);
-			if (map.matrix[i][j] == WALL_CHAR)
-				mlx_put_image_to_window(meta.mlx, meta.mlx_win, draw.xpm_wall, j * XPM_SIZE, i * XPM_SIZE);
-			if (map.matrix[i][j] == COLLECTIBLE_CHAR)
-				mlx_put_image_to_window(meta.mlx, meta.mlx_win, draw.xpm_collectiblle, j * XPM_SIZE, i * XPM_SIZE);
-			if (map.matrix[i][j] == EXIT_CHAR)
-				mlx_put_image_to_window(meta.mlx, meta.mlx_win, draw.xpm_exit, j * XPM_SIZE, i * XPM_SIZE);
-			if (map.matrix[i][j] == PLAYER_CHAR)
-				mlx_put_image_to_window(meta.mlx, meta.mlx_win, draw.xpm_player, j * XPM_SIZE, i * XPM_SIZE);
-			printf("%c", map.matrix[i][j]);
-			j++;
-		}
-		printf("\n");
-		i++;
-		j = 0;
-	}
-	// mlx_put_image_to_window(meta.mlx, meta.mlx_win, draw.xpm_wall, 0, 0);
+	ft_draw_game(&map, &draw, &meta);
+	
 	//Hook Keypress
 	mlx_key_hook(meta.mlx_win, ft_input, &meta);
 	mlx_loop(meta.mlx);

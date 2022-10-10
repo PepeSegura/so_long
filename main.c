@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 18:23:26 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/10 04:33:36 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/10 16:30:05 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,10 @@ int	main(int argc, char **argv)
 	meta.y = 0;
 
 	if (argc != 2)
+	{
 		printf("Argumentos invalidos\n");
+		return (0);
+	}
 	//Get MAPA size
 	ft_get_map_size(ft_open_map(argv[1]), &map);
 	//Store MAPA into matrix
@@ -112,7 +115,8 @@ int	main(int argc, char **argv)
 	}
 	// mlx_put_image_to_window(meta.mlx, meta.mlx_win, draw.xpm_wall, 0, 0);
 	//Hook Keypress
-	mlx_key_hook(meta.mlx_win, close_win, &meta.mlx_win);
+	mlx_key_hook(meta.mlx_win, ft_input, &meta);
 	mlx_loop(meta.mlx);
+	ft_leaks();
 	return (0);
 }

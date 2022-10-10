@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 21:09:36 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/08 16:37:40 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/10 15:10:56 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,6 @@ char	**ft_store_map(int fd, t_map *map)
 			return (ft_free(map->matrix, i));
 		i++;
 	}
-	// ft_leaks();
 	close(fd);
 	return (map->matrix);
 }

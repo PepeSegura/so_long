@@ -6,7 +6,7 @@
 #    By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 13:27:49 by psegura-          #+#    #+#              #
-#    Updated: 2022/10/06 13:12:26 by psegura-         ###   ########.fr        #
+#    Updated: 2022/10/10 16:21:36 by psegura-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,13 +18,14 @@ SRCS =	\
 		utils.c	\
 		map_validator.c	\
 		store_map.c	\
+		movement.c	\
 
 OBJS_DIR = objs/
 OBJS = $(SRCS:.c=.o)
 OBJECTS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJS))
 
 CC = gcc
-FLAGS = -Wall -Wextra -Werror
+# FLAGS = -Wall -Wextra -Werror
 FLAGS_MLX = -lmlx -framework OpenGL -framework AppKit
 
 $(OBJS_DIR)%.o : %.c ./include/so_long.h

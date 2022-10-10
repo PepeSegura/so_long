@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 18:01:35 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/09 01:09:49 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/10 16:26:00 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_leaks(void);
 
 //Funciones MLX
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
-int		close_win(int keycode);
+
 
 //Funciones Auxiliares
 char	*ft_strdup(const char *s1);
@@ -40,5 +40,8 @@ char	**ft_store_map(int fd, t_map *map);
 int		ft_line_lenght(char *line);
 void	ft_valid_lines(t_map *map);
 void	ft_print_error(int error_code, char *error_message);
+
+//Input & movement
+int	ft_input(int keycode, t_meta *meta);
 
 #endif

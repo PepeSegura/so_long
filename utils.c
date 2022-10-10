@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 18:23:24 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/08 19:05:11 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/10 16:25:49 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,6 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 
 	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
 	*(unsigned int *)dst = color;
-}
-
-int	close_win(int keycode)
-{
-	if (keycode == 53)
-	{
-		exit(EXIT_SUCCESS);
-	}
-	return (0);
 }
 
 int	ft_line_lenght(char *line)

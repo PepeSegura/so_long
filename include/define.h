@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 23:11:20 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/10 04:56:42 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/10 16:34:45 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,18 @@
 # define COLLECTIBLE_CHAR	'C'
 # define EXIT_CHAR			'E'
 # define PLAYER_CHAR		'P'
+
+//Keys
+# define ESC	53
+# define W		13
+# define A		0
+# define S		1
+# define D		2
+
+# define UP		126
+# define LEFT	123
+# define DOWN	125
+# define RIGHT	124
 
 //XPM
 # define XPM_SIZE	50

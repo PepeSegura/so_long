@@ -6,11 +6,11 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 16:08:31 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/10 18:46:17 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/25 16:54:54 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/so_long.h"
+#include "./inc/so_long.h"
 
 // void	ft_move_up(t_map *map)
 // {

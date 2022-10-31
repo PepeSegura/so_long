@@ -6,11 +6,11 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 18:23:26 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/10 19:37:24 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/27 18:18:22 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/so_long.h"
+#include "./inc/so_long.h"
 
 void	ft_leaks(void)
 {
@@ -56,6 +56,7 @@ int	main(int argc, char **argv)
 	//Sprite
 	// xpm_wall = mlx_xpm_file_to_image(meta.mlx, relative_path, &meta.img_w, &meta.img_h);
 	draw.xpm_empty = mlx_xpm_file_to_image(meta.mlx, EMPTY_PATH, &meta.img_w, &meta.img_h);
+	printf("%d and %d\n", meta.img_h, meta.img_w);
 	draw.xpm_wall = mlx_xpm_file_to_image(meta.mlx, WALL_PATH, &meta.img_w, &meta.img_h);
 	draw.xpm_collectiblle = mlx_xpm_file_to_image(meta.mlx, COLLECTIBLE_PATH, &meta.img_w, &meta.img_h);
 	draw.xpm_exit = mlx_xpm_file_to_image(meta.mlx, EXIT_PATH, &meta.img_w, &meta.img_h);

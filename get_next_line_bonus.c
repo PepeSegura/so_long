@@ -6,11 +6,11 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 18:54:26 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/05 18:53:55 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/25 16:54:15 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/get_next_line_bonus.h"
+#include "./inc/get_next_line_bonus.h"
 
 char	*ft_get_stash(int fd, char *stash)
 {

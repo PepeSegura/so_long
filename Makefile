@@ -6,7 +6,7 @@
 #    By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 13:27:49 by psegura-          #+#    #+#              #
-#    Updated: 2022/10/10 20:21:50 by psegura-         ###   ########.fr        #
+#    Updated: 2022/10/30 23:29:55 by psegura-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ CC = gcc
 # FLAGS = -Wall -Wextra -Werror
 FLAGS_MLX = -lmlx -framework OpenGL -framework AppKit
 
-$(OBJS_DIR)%.o : %.c ./include/so_long.h
+$(OBJS_DIR)%.o : %.c ./inc/so_long.h
 	@mkdir -p $(OBJS_DIR)
 	@echo "Compiling: $<"
 	@$(CC) $(FLAGS) -c $< -o $@
@@ -40,6 +40,7 @@ $(NAME): $(OBJECTS_PREFIXED)
 	@ar r $(NAME) $(OBJECTS_PREFIXED)
 	@echo "🏂 so_long Done 🏂"
 	$(CC) $(FLAGS) $(FLAGS_MLX) main.c so_long.a -o $(EXE)
+	@rm -f $(NAME)
 
 all: $(NAME)
 

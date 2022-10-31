@@ -6,11 +6,11 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 21:09:36 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/10 15:10:56 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/25 16:54:59 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/so_long.h"
+#include "./inc/so_long.h"
 
 static char	**ft_free(char **matrix, int i)
 {

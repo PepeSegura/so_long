@@ -1,0 +1,73 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/10/01 13:27:49 by psegura-          #+#    #+#              #
+#    Updated: 2022/10/11 22:22:17 by psegura-         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = so_long
+
+LMLX_NAME = libmlx.a
+
+SRCS_NAME =	main.c \
+		get_next_line_bonus.c \
+		get_next_line_utils_bonus.c \
+		utils.c	\
+		map_validator.c	\
+		store_map.c	\
+		movement.c	\
+		input.c		\
+		draw.c	\
+
+OBJ_PATH = objs
+INC_PATH = include
+SRC_PATH = src
+MLX_PATH = minilibx_macos
+
+
+CC = gcc
+CFLAGS += -Wall -Wextra -Werror
+CFLAGS += -I ./$(INC_PATH) -I ./$(MLX_PATH)
+
+MAKE = make
+
+FLAGS_MLX = -lmlx -framework OpenGL -framework AppKit
+
+OBJS_NAME = $(SRCS_NAME:%.c=%.o)
+
+SRCS = $(addprefix $(SRC_PATH)/, $(SRCS_NAME))
+OBJS = $(addprefix $(OBJ_PATH)/, $(OBJS_NAME))
+
+all: $(NAME)
+
+$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c | $(OBJ_PATH)
+	@echo "Compiling: $<"
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJ_PATH):
+	@mkdir -p $(OBJ_PATH) 2> /dev/null
+
+$(LMLX_NAME):
+	$(MAKE) all -sC $(MLX_PATH)
+	cp -r $(addprefix $(MLX_PATH)/, $(LMLX_NAME)) .
+
+$(NAME): $(LMLX_NAME) $(OBJS)
+	$(CC) $(CFLAGS) $(FLAGS_FLX) $(OBJS) -o $(NAME) $(LMLX_NAME)
+	@echo "🏂 so_long Done 🏂"
+
+clean:
+	rm -rf $(OBJ_PATH)
+
+fclean: clean
+	$(MAKE) clean -sC $(MLX_PATH)
+	rm -f $(LMLX_NAME)
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re hola

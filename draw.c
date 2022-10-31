@@ -6,12 +6,13 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 18:41:15 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/10 19:29:40 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/25 16:54:33 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/so_long.h"
+#include "./inc/so_long.h"
 
+//Imprimir fondo de EMPTY_CHAR
 void	ft_draw_background(t_map *map, t_img *img, t_meta *meta)
 {
 	int	i;
@@ -19,7 +20,6 @@ void	ft_draw_background(t_map *map, t_img *img, t_meta *meta)
 
 	i = 0;
 	j = 0;
-	//Imprimir fondo de EMPTY_CHAR
 	while (i < map->height)
 	{
 		while (j < map->wide)
@@ -44,9 +44,9 @@ void	ft_draw_game(t_map *map, t_img *img, t_meta *meta)
 	{
 		while (j < map->wide)
 		{
-			if (map->matrix[i][j] == EMPTY_CHAR)
-				mlx_put_image_to_window(meta->mlx, meta->mlx_win,
-					img->xpm_empty, j * XPM_SIZE, i * XPM_SIZE);
+			// if (map->matrix[i][j] == EMPTY_CHAR)
+			// 	mlx_put_image_to_window(meta->mlx, meta->mlx_win,
+			// 		img->xpm_empty, j * XPM_SIZE, i * XPM_SIZE);
 			if (map->matrix[i][j] == WALL_CHAR)
 				mlx_put_image_to_window(meta->mlx, meta->mlx_win,
 					img->xpm_wall, j * XPM_SIZE, i * XPM_SIZE);
@@ -67,4 +67,10 @@ void	ft_draw_game(t_map *map, t_img *img, t_meta *meta)
 		j = 0;
 	}	
 }
-	
+
+// void	ft_draw_player(t_map *map, t_img *img, t_meta *meta, t_player *p)
+// {
+// 	mlx_put_image_to_window(meta->mlx, meta->mlx_win,
+// 			img->xpm_player, j * XPM_SIZE, i * XPM_SIZE);
+// }
+// 			ft_draw_game(&map, &draw, &meta);

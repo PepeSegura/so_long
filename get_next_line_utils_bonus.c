@@ -6,11 +6,11 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 18:54:22 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/05 23:50:48 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/25 16:54:26 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/get_next_line_bonus.h"
+#include "./inc/get_next_line_bonus.h"
 
 int	ft_strlen(const char *str)
 {

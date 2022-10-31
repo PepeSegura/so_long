@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 03:36:31 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/09 00:51:56 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/11 00:07:20 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@ typedef struct s_map {
 	int		wide;
 	int		height;
 }	t_map;
+
+//Player
+typedef struct s_player {
+	int		x_pos;
+	int		y_pos;
+}	t_player;
 
 //Map requiriments
 typedef struct s_requiriments {

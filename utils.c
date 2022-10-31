@@ -6,11 +6,11 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 18:23:24 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/10 16:25:49 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/25 16:55:02 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/so_long.h"
+#include "./inc/so_long.h"
 
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {

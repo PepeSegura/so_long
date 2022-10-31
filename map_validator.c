@@ -6,11 +6,11 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 02:48:41 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/08 16:05:54 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/10/25 16:54:48 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./include/so_long.h"
+#include "./inc/so_long.h"
 
 void	ft_valid_lines(t_map *map)
 {

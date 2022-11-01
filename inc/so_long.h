@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 18:01:35 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/10 21:04:28 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/01 14:22:59 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,11 @@
 # include "define.h"
 # include "structures.h"
 
+//Libft
+# include "../libft/inc/libft.h"
+
 //Get_next_line
-# include "get_next_line_bonus.h"
+// # include "get_next_line_bonus.h"
 
 //Leaks
 void	ft_leaks(void);

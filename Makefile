@@ -6,19 +6,20 @@
 #    By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 13:27:49 by psegura-          #+#    #+#              #
-#    Updated: 2022/11/01 14:26:39 by psegura-         ###   ########.fr        #
+#    Updated: 2022/11/01 15:28:16 by psegura-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
-SRCS =	srcs/main.c\
-		srcs/utils.c	\
-		srcs/map_validator.c	\
-		srcs/store_map.c	\
+SRCS =						\
+		srcs/main.c			\
+		srcs/draw.c			\
+		srcs/utils.c		\
 		srcs/input.c		\
-		srcs/draw.c	\
-		# movement.c	\
+		srcs/movement.c		\
+		srcs/store_map.c	\
+		srcs/map_validator.c\
 
 OBJS = $(SRCS:.c=.o)
 
@@ -30,7 +31,7 @@ CFLAGS = -Wall -Wextra -Werror -I inc -I libft
 FLAGS_MLX = -lmlx -framework OpenGL -framework AppKit
 
 $(NAME): $(OBJS)
-	make -C libft
+	@make -C libft
 	$(CC) $(CFLAGS) $(FLAGS_MLX) $(OBJS) $(LIB) -o $(NAME)
 	@echo "🏂 so_long Done 🏂"
 
@@ -38,11 +39,11 @@ all: $(NAME)
 
 clean:
 	make clean -C libft
-	rm -rf $(OBJS)
+	@rm -rf $(OBJS)
 
 fclean: clean
 	make fclean -C libft
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 

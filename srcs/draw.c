@@ -6,14 +6,28 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 18:41:15 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/01 14:22:13 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/07 12:14:06 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+void	ft_create_images(t_meta *meta, t_xpm *xpm)
+{
+	xpm->empty = mlx_xpm_file_to_image(meta->mlx, EMPTY_PATH,
+			&meta->img_w, &meta->img_h);
+	xpm->wall = mlx_xpm_file_to_image(meta->mlx, WALL_PATH,
+			&meta->img_w, &meta->img_h);
+	xpm->collectiblle = mlx_xpm_file_to_image(meta->mlx, COLLECTIBLE_PATH,
+			&meta->img_w, &meta->img_h);
+	xpm->exit = mlx_xpm_file_to_image(meta->mlx, EXIT_PATH,
+			&meta->img_w, &meta->img_h);
+	xpm->player = mlx_xpm_file_to_image(meta->mlx, PLAYER_PATH,
+			&meta->img_w, &meta->img_h);
+}
+
 //Imprimir fondo de EMPTY_CHAR
-void	ft_draw_background(t_map *map, t_img *img, t_meta *meta)
+void	ft_draw_background(t_map *map, t_xpm *xpm, t_meta *meta)
 {
 	int	i;
 	int	j;
@@ -25,7 +39,7 @@ void	ft_draw_background(t_map *map, t_img *img, t_meta *meta)
 		while (j < map->wide)
 		{
 			mlx_put_image_to_window(meta->mlx, meta->mlx_win,
-				img->xpm_empty, j * XPM_SIZE, i * XPM_SIZE);
+				xpm->empty, j * XPM_SIZE, i * XPM_SIZE);
 			j++;
 		}
 		i++;
@@ -33,7 +47,7 @@ void	ft_draw_background(t_map *map, t_img *img, t_meta *meta)
 	}
 }
 
-void	ft_draw_game(t_map *map, t_img *img, t_meta *meta)
+void	ft_draw_game(t_map *map, t_xpm *xpm, t_meta *meta)
 {
 	int	i;
 	int	j;
@@ -44,33 +58,22 @@ void	ft_draw_game(t_map *map, t_img *img, t_meta *meta)
 	{
 		while (j < map->wide)
 		{
-			// if (map->matrix[i][j] == EMPTY_CHAR)
-			// 	mlx_put_image_to_window(meta->mlx, meta->mlx_win,
-			// 		img->xpm_empty, j * XPM_SIZE, i * XPM_SIZE);
 			if (map->matrix[i][j] == WALL_CHAR)
 				mlx_put_image_to_window(meta->mlx, meta->mlx_win,
-					img->xpm_wall, j * XPM_SIZE, i * XPM_SIZE);
+					xpm->wall, j * XPM_SIZE, i * XPM_SIZE);
 			if (map->matrix[i][j] == COLLECTIBLE_CHAR)
 				mlx_put_image_to_window(meta->mlx, meta->mlx_win,
-					img->xpm_collectiblle, j * XPM_SIZE, i * XPM_SIZE);
+					xpm->collectiblle, j * XPM_SIZE, i * XPM_SIZE);
 			if (map->matrix[i][j] == EXIT_CHAR)
 				mlx_put_image_to_window(meta->mlx, meta->mlx_win,
-					img->xpm_exit, j * XPM_SIZE, i * XPM_SIZE);
+					xpm->exit, j * XPM_SIZE, i * XPM_SIZE);
 			if (map->matrix[i][j] == PLAYER_CHAR)
 				mlx_put_image_to_window(meta->mlx, meta->mlx_win,
-					img->xpm_player, j * XPM_SIZE, i * XPM_SIZE);
-			printf("%c", map->matrix[i][j]);
+					xpm->player, j * XPM_SIZE, i * XPM_SIZE);
 			j++;
 		}
-		printf("\n");
+		ft_printf("%s", map->matrix[i]);
 		i++;
 		j = 0;
 	}	
 }
-
-// void	ft_draw_player(t_map *map, t_img *img, t_meta *meta, t_player *p)
-// {
-// 	mlx_put_image_to_window(meta->mlx, meta->mlx_win,
-// 			img->xpm_player, j * XPM_SIZE, i * XPM_SIZE);
-// }
-// 			ft_draw_game(&map, &draw, &meta);

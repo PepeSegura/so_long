@@ -6,12 +6,19 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 03:36:31 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/01 14:11:38 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/07 19:24:15 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTURES_H
 # define STRUCTURES_H
+
+//Map requiriments
+typedef struct s_reqs {
+	int		c_count;
+	int		e_count;
+	int		p_count;
+}	t_reqs;
 
 typedef struct s_data {
 	void	*img;
@@ -26,24 +33,14 @@ typedef struct s_map {
 	char	**matrix;
 	int		wide;
 	int		height;
+	t_reqs	reqs;
 }	t_map;
 
 //Player
 typedef struct s_player {
-	int		x_pos;
-	int		y_pos;
+	int		x;
+	int		y;
 }	t_player;
-
-//Map requiriments
-typedef struct s_requiriments {
-	int		wide;
-	int		height;
-	int		EMPTY_CHAR_COUNT;
-	int		WALL_CHAR_COUNT;
-	int		COLLECTIBLE_CHAR_COUNT;
-	int		EXIT_CHAR_COUNT;
-	int		PLAYER_CHAR_COUNT;
-}	t_requiriments;
 
 //Meta
 typedef struct s_meta {
@@ -58,12 +55,12 @@ typedef struct s_meta {
 }	t_meta;
 
 //Sprites
-typedef struct s_img {
-	void	*xpm_empty;
-	void	*xpm_wall;
-	void	*xpm_collectiblle;
-	void	*xpm_exit;
-	void	*xpm_player;
-}	t_img;
+typedef struct s_xpm {
+	void	*empty;
+	void	*wall;
+	void	*collectiblle;
+	void	*exit;
+	void	*player;
+}	t_xpm;
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 03:36:31 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/07 19:24:15 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/08 00:44:17 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,12 @@ typedef struct s_xpm {
 	void	*exit;
 	void	*player;
 }	t_xpm;
+
+typedef struct s_cosas {
+	t_map		map;
+	t_player	player;
+	t_xpm		xpm;
+	t_meta		meta;
+}	t_cosas;
 
 #endif

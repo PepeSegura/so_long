@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 18:41:15 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/07 12:14:06 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/08 01:00:17 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	ft_draw_game(t_map *map, t_xpm *xpm, t_meta *meta)
 					xpm->player, j * XPM_SIZE, i * XPM_SIZE);
 			j++;
 		}
-		ft_printf("%s", map->matrix[i]);
+		// ft_printf("%s", map->matrix[i]);
 		i++;
 		j = 0;
 	}	

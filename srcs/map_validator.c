@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 02:48:41 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/06 02:32:33 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/09 02:30:21 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_valid_lines(t_map *map)
 
 void	ft_print_error(int error_code, char *error_message)
 {
-		printf("Error\nError code:%d\t%s", error_code, error_message);
+	printf("Error\nError code:%d\t%s", error_code, error_message);
 }
 
 int	ft_check_map(char *str)
@@ -45,5 +45,3 @@ int	ft_check_map(char *str)
 	}
 	return (check);
 }
-
-

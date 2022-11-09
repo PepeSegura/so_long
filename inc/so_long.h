@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 18:01:35 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/08 01:04:51 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/09 01:52:31 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	ft_leaks(void);
 
 //Funciones MLX
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
-
 
 //Funciones Auxiliares
 char	*ft_strdup(const char *s1);

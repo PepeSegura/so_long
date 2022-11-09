@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 16:44:42 by psegura-          #+#    #+#             */
-/*   Updated: 2022/10/30 23:01:02 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/09 01:09:57 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }	t_list;
-
 
 //Funciones LIBFT
 int			ft_toupper(int c);
@@ -80,7 +79,6 @@ t_list		*ft_lstnew(void *content);
 t_list		*ft_lstlast(t_list *lst);
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-
 //GET_NEXT_LINE
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10
@@ -91,25 +89,26 @@ t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 # endif
 
 //Funciones GET_NEXT_LINE
-char	*get_next_line(int fd);
-char	*ft_clean_stash(char *stash);
-char	*ft_get_line(char *stash);
-char	*ft_get_stash(int fd, char *stash);
+char		*get_next_line(int fd);
+char		*ft_clean_stash(char *stash);
+char		*ft_get_line(char *stash);
+char		*ft_get_stash(int fd, char *stash);
 
-int		ft_strlen_gnl(char *str);
-char	*ft_strjoin_gnl(char *stash, char *buffer);
-char	*ft_strchr_gnl(char *str, int c);
-void	*ft_calloc_gnl(size_t count, size_t size);
+int			ft_strlen_gnl(char *str);
+char		*ft_strjoin_gnl(char *stash, char *buffer);
+char		*ft_strchr_gnl(char *str, int c);
+void		*ft_calloc_gnl(size_t count, size_t size);
 
 //Funciones PRINTF
-int	ft_printf(char const *string, ...) __attribute__((format(printf, 1, 2)));
+int			ft_printf(char const *string, ...)
+			__attribute__((format(printf, 1, 2)));
 
-int	ft_putchar_printf(int c);
-int	ft_putstr_printf(char *str);
-int	ft_strlen_printf(char *str);
+int			ft_putchar_printf(int c);
+int			ft_putstr_printf(char *str);
+int			ft_strlen_printf(char *str);
 
-int	ft_putnbr_base(size_t nbr, char *b);
-int	ft_putnbr(int n);
-int	ft_pointer(void *p);
+int			ft_putnbr_base(size_t nbr, char *b);
+int			ft_putnbr(int n);
+int			ft_pointer(void *p);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 03:36:31 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/08 00:44:17 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/09 02:06:07 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@ typedef struct s_reqs {
 	int		e_count;
 	int		p_count;
 }	t_reqs;
+
+typedef struct s_count {
+	int		i;
+	int		j;
+}	t_count;
 
 typedef struct s_data {
 	void	*img;
@@ -65,9 +70,10 @@ typedef struct s_xpm {
 
 typedef struct s_cosas {
 	t_map		map;
-	t_player	player;
+	t_player	p;
 	t_xpm		xpm;
 	t_meta		meta;
+	t_data		img;
 }	t_cosas;
 
 #endif

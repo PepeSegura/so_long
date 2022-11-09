@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 18:23:26 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/08 01:33:15 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/09 02:13:38 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,54 +19,27 @@ void	ft_leaks(void)
 
 int	main(int argc, char **argv)
 {
-	t_meta		meta;
-	t_data		img;
-	t_xpm		xpm;
-	t_player	player;
-	t_cosas		cosas;
-	
+	t_cosas		c;
+
+	ft_memset(&c, 0, sizeof(t_cosas));
 	if (argc != 2)
-	{
-		ft_printf("Argumentos invalidos\n");
 		return (0);
-	}
-	//Get MAPA size
-	ft_get_map_size(ft_open_map(argv[1]), &cosas.map);
-	
-	//Store MAPA into matrix
-	cosas.map.matrix = ft_store_map(ft_open_map(argv[1]), &cosas.map);
-	ft_printf("\nMap size:\n  X:\t%d\n  Y:\t%d\n", cosas.map.wide, cosas.map.height);
-	
-	//Read MAPA
-	read_map(&player, &cosas.map);
-	
-	//Get WINDOW size
-	meta.win_w = cosas.map.wide * XPM_SIZE;
-	meta.win_h = cosas.map.height * XPM_SIZE;
-	ft_printf("\nWindow:\n  X:\t%d\n  Y:\t%d\n\n", meta.win_w, meta.win_h);
-	
-	//Start Mlx
-	meta.mlx = mlx_init();
-	//Create Window	
-	meta.mlx_win = mlx_new_window(meta.mlx, meta.win_w, meta.win_h, "so_long");
-	//Background Color
-	img.img = mlx_new_image(meta.mlx, meta.win_w, meta.win_h);
-	//Sprite
-	ft_create_images(&meta, &xpm);
-
-	//Imprimir fondo de EMPTY_CHAR
-	ft_draw_background(&cosas.map, &xpm, &meta);
-
-	//Sprite
-	ft_draw_game(&cosas.map, &xpm, &meta);
-	
-	cosas.player = player;
-	cosas.meta = meta;
-	cosas.xpm = xpm;
-
-	//Hook Keypress
-	mlx_key_hook(meta.mlx_win, ft_input, &cosas);
-	mlx_loop(meta.mlx);
+	ft_get_map_size(ft_open_map(argv[1]), &c.map);
+	c.map.matrix = ft_store_map(ft_open_map(argv[1]), &c.map);
+	ft_printf("\nMap size:\n  X:\t%d\n  Y:\t%d\n", c.map.wide, c.map.height);
+	read_map(&c.p, &c.map);
+	c.meta.win_w = c.map.wide * XPM_SIZE;
+	c.meta.win_h = c.map.height * XPM_SIZE;
+	ft_printf("\nWindow:\n  X:\t%d\n  Y:\t%d\n\n", c.meta.win_w, c.meta.win_h);
+	c.meta.mlx = mlx_init();
+	c.meta.mlx_win = mlx_new_window(
+			c.meta.mlx, c.meta.win_w, c.meta.win_h, "so_long");
+	c.img.img = mlx_new_image(c.meta.mlx, c.meta.win_w, c.meta.win_h);
+	ft_create_images(&c.meta, &c.xpm);
+	ft_draw_background(&c.map, &c.xpm, &c.meta);
+	ft_draw_game(&c.map, &c.xpm, &c.meta);
+	mlx_key_hook(c.meta.mlx_win, ft_input, &c);
+	mlx_loop(c.meta.mlx);
 	ft_leaks();
 	return (0);
 }

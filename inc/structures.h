@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 03:36:31 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/09 02:06:07 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/11 04:24:26 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ typedef struct s_cosas {
 	t_xpm		xpm;
 	t_meta		meta;
 	t_data		img;
+	int			moves_count;
 }	t_cosas;
 
 #endif

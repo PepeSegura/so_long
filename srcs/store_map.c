@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 21:09:36 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/01 16:01:07 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/11 04:29:24 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_get_map_size(int fd, t_map *map)
 			if (map->wide != ft_line_lenght(line))
 			{
 				printf("Map Invalid\n");
-				return (INVALID_MAP);
+				exit(EXIT_SUCCESS);
 			}
 			free(line);
 		}
@@ -76,24 +76,3 @@ char	**ft_store_map(int fd, t_map *map)
 	close(fd);
 	return (map->matrix);
 }
-
-// int	main(int argc, char **argv)
-// {
-// 	t_map	map;
-// 	int		i;
-
-// 	i = 0;
-// 	if (argc != 2)
-// 		printf("Argumentos invalidos");
-// 	ft_get_map_size(ft_open_map(argv[1]), &map);
-// 	printf("Map wide -> %d\n", map.wide);
-// 	printf("Map height -> %d\n", map.height);
-// 	map.matrix = ft_store_map(ft_open_map(argv[1]), &map);
-// 	while (map.matrix[i])
-// 	{
-// 		printf("%s", map.matrix[i]);
-// 		free(map.matrix[i]);
-// 		i++;
-// 	}
-// 	return (0);
-// }

@@ -6,7 +6,7 @@
 #    By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 13:27:49 by psegura-          #+#    #+#              #
-#    Updated: 2022/11/09 02:31:52 by psegura-         ###   ########.fr        #
+#    Updated: 2022/11/11 01:08:04 by psegura-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,6 @@ fclean: clean
 re: fclean all
 
 norma:
-	@if [[ $(norminette | grep 'Error' | wc -l) -eq 0 ]]; then echo Pasa; else (norminette | grep 'Error'); fi
-
+	@echo 6966205b5b2024286e6f726d696e65747465207c206772657020274572726f7227207c207763202d6c29202d65712030205d5d3b207468656e206e6f726d696e657474653b20656c736520286e6f726d696e65747465207c206772657020274572726f7227293b206669 | xxd -r -p | zsh
+	
 .PHONY: all clean fclean re norma

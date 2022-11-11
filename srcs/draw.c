@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 18:41:15 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/09 01:59:18 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/11 03:45:25 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ void	ft_create_images(t_meta *meta, t_xpm *xpm)
 	xpm->exit = mlx_xpm_file_to_image(meta->mlx, EXIT_PATH,
 			&meta->img_w, &meta->img_h);
 	xpm->player = mlx_xpm_file_to_image(meta->mlx, PLAYER_PATH,
+			&meta->img_w, &meta->img_h);
+}
+
+void	ft_create_images_player(t_meta *meta, t_xpm *xpm, char *path)
+{
+	xpm->player = mlx_xpm_file_to_image(meta->mlx, path,
 			&meta->img_w, &meta->img_h);
 }
 

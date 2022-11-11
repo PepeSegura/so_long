@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 23:11:20 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/09 01:12:02 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/11 04:07:55 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@
 # define FALSE 0
 
 //Errores
-# define INVALID_MAP -1
-# define SQUARE_MAP -10
+# define INVALID_MAP	-1
+# define SQUARE_MAP		-10
+# define INVALID_P		-11
 
 //Map char
 # define VALID_CHARS		"01CEP"
@@ -47,6 +48,11 @@
 # define WALL_PATH			"./sprites/others/wall50v2.xpm"
 # define COLLECTIBLE_PATH	"./sprites/others/fruta50.xpm"
 # define EXIT_PATH			"./sprites/others/cofre50.xpm"
-# define PLAYER_PATH		"./sprites/player/luffy__right250.xpm"
+# define PLAYER_PATH		"./sprites/clean/xpm/luffy_right2.xpm"
 
+//Player
+# define PLAYER_UP		"./sprites/clean/xpm/luffy_up2.xpm"
+# define PLAYER_LEFT	"./sprites/clean/xpm/luffy_left2.xpm"
+# define PLAYER_DOWN	"./sprites/clean/xpm/luffy_down2.xpm"
+# define PLAYER_RIGHT	"./sprites/clean/xpm/luffy_right2.xpm"
 #endif

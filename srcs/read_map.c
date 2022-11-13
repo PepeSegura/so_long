@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 17:54:11 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/10 20:31:04 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/13 04:57:46 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,10 @@ void	read_map(t_player *player, t_map *map)
 				map->reqs.c_count++;
 			if (map->matrix[y][x] == EXIT_CHAR)
 				map->reqs.e_count++;
+			ft_check_mid_row(map->matrix[y], map);
 			x++;
 		}
 		y++;
 		x = 0;
 	}
-	ft_printf("\nPlayer pos:\n  X:\t%d\n  Y:\t%d\n", player->x, player->y);
-	ft_printf("\nMap:\n  P:\t%d\n  C:\t%d\n  E:\t%d\n",
-		map->reqs.p_count, map->reqs.c_count,
-		map->reqs.e_count);
 }

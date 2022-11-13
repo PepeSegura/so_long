@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 23:11:20 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/11 04:07:55 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/13 04:52:36 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,14 @@
 
 //Errores
 # define INVALID_MAP	-1
+# define INVALID_FD		-2
+# define INVALID_EXT	-3
+# define INVALID_CHAR	-4
 # define SQUARE_MAP		-10
 # define INVALID_P		-11
-
+# define INVALID_C		-12
+# define INVALID_E		-13
+# define NOT_CLOSED		-14
 //Map char
 # define VALID_CHARS		"01CEP"
 # define EMPTY_CHAR			'0'
@@ -37,10 +42,11 @@
 # define S		1
 # define D		2
 
-# define UP		126
-# define LEFT	123
-# define DOWN	125
-# define RIGHT	124
+# define UP			126
+# define LEFT		123
+# define DOWN		125
+# define RIGHT		124
+# define ON_DESTROY 17
 
 //XPM
 # define XPM_SIZE	50

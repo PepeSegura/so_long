@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 18:01:35 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/11 03:55:07 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/13 04:57:24 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,10 @@ char	**ft_store_map(int fd, t_map *map);
 
 //Map Validator
 void	read_map(t_player *player, t_map *map);
+void	ft_check_mid_row(char *row, t_map *map);
 void	set_player(t_map *map, t_player *player, int x, int y);
 int		ft_line_lenght(char *line);
-void	ft_valid_lines(t_cosas *c);
+void	ft_valid_map(t_cosas *c);
 void	ft_print_error(int error_code, char *error_message);
 
 //Input & movement

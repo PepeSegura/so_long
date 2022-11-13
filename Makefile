@@ -6,7 +6,7 @@
 #    By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 13:27:49 by psegura-          #+#    #+#              #
-#    Updated: 2022/11/11 01:08:04 by psegura-         ###   ########.fr        #
+#    Updated: 2022/11/13 07:20:54 by psegura-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME = so_long
 
 SRCS =						\
 		srcs/main.c			\
+		srcs/create_imgs.c	\
 		srcs/draw.c			\
 		srcs/utils.c		\
 		srcs/input.c		\

@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 16:08:31 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/13 06:32:58 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/13 07:19:04 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ void	ft_move(t_cosas *c, int x, int y)
 		c->map.matrix[c->p.y + y][c->p.x + x] = PLAYER_CHAR;
 		c->p.y += y;
 		c->p.x += x;
+		if (c->map.reqs.c_count == 0)
+			ft_create_images_exit(&c->meta, &c->xpm, EXIT_OPEN_PATH);
 		c->moves_count++;
 		ft_printf("\033cMoves Counter: %d\n", c->moves_count);
 	}
 	ft_draw_background(&c->map, &c->xpm, &c->meta);
 	ft_draw_game(&c->map, &c->xpm, &c->meta);
-	if (c->map.reqs.c_count == 0)
-		ft_create_images_exit(&c->meta, &c->xpm, EXIT_OPEN_PATH);
 }

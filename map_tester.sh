@@ -30,4 +30,4 @@ echo -e "\033[1;32m \n\nno_read_permissions \033[0m"
 echo -e "\033[1;32m \n\nmap_not_called_map.ber \033[0m"
 ./so_long maps/invalid_maps/invalid_name.bar
 
-echo -e "\n"
+echo 0

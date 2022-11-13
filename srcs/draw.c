@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 18:41:15 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/11 21:25:38 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/13 06:31:20 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,19 @@ void	ft_create_images(t_meta *meta, t_xpm *xpm)
 			&meta->img_w, &meta->img_h);
 	xpm->player = mlx_xpm_file_to_image(meta->mlx, PLAYER_PATH,
 			&meta->img_w, &meta->img_h);
+	xpm->enemie = mlx_xpm_file_to_image(meta->mlx, ENEMIE_PATH,
+			&meta->img_w, &meta->img_h);
 }
 
 void	ft_create_images_player(t_meta *meta, t_xpm *xpm, char *path)
 {
 	xpm->player = mlx_xpm_file_to_image(meta->mlx, path,
+			&meta->img_w, &meta->img_h);
+}
+
+void	ft_create_images_exit(t_meta *meta, t_xpm *xpm, char *path)
+{
+	xpm->exit = mlx_xpm_file_to_image(meta->mlx, path,
 			&meta->img_w, &meta->img_h);
 }
 
@@ -46,6 +54,9 @@ void	ft_draw(t_map *map, t_xpm *xpm, t_meta *meta, t_count *c)
 	if (map->matrix[c->i][c->j] == PLAYER_CHAR)
 		mlx_put_image_to_window(meta->mlx, meta->mlx_win,
 			xpm->player, c->j * XPM_SIZE, c->i * XPM_SIZE);
+	if (map->matrix[c->i][c->j] == ENEMIE_CHAR)
+		mlx_put_image_to_window(meta->mlx, meta->mlx_win,
+			xpm->enemie, c->j * XPM_SIZE, c->i * XPM_SIZE);
 }
 
 void	ft_draw_background(t_map *map, t_xpm *xpm, t_meta *meta)

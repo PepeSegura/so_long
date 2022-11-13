@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 21:09:36 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/13 04:25:37 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/13 06:21:58 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_parser(char *path)
 {
 	int	len;
 
-	len = strlen(path);
+	len = ft_strlen(path);
 	if (path[len - 4] == '.' && path[len - 3] == 'b'
 		&& path[len - 2] == 'e' && path[len - 1] == 'r')
 		return (TRUE);

@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 18:01:35 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/13 04:57:24 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/13 06:33:41 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,6 @@ void	ft_draw_background(t_map *map, t_xpm *xpm, t_meta *meta);
 void	ft_draw_game(t_map *map, t_xpm *xpm, t_meta *meta);
 void	ft_draw_player(t_map *map, t_xpm *xpm, t_meta *meta);
 void	ft_create_images_player(t_meta *meta, t_xpm *xpm, char *path);
+void	ft_create_images_exit(t_meta *meta, t_xpm *xpm, char *path);
 
 #endif

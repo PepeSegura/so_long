@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 23:11:20 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/13 04:52:36 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/13 06:50:43 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,17 @@
 # define INVALID_C		-12
 # define INVALID_E		-13
 # define NOT_CLOSED		-14
+# define DEAD			-15
+# define WIN			-16
+
 //Map char
-# define VALID_CHARS		"01CEP"
+# define VALID_CHARS		"01CEPB"
 # define EMPTY_CHAR			'0'
 # define WALL_CHAR			'1'
 # define COLLECTIBLE_CHAR	'C'
 # define EXIT_CHAR			'E'
 # define PLAYER_CHAR		'P'
+# define ENEMIE_CHAR		'B'
 
 //Keys
 # define ESC	53
@@ -53,7 +57,9 @@
 # define EMPTY_PATH			"./sprites/others/suelo50.xpm"
 # define WALL_PATH			"./sprites/others/wall50v2.xpm"
 # define COLLECTIBLE_PATH	"./sprites/others/fruta50.xpm"
-# define EXIT_PATH			"./sprites/others/cofre50.xpm"
+# define EXIT_PATH			"./sprites/others/closed_door.xpm"
+# define EXIT_OPEN_PATH		"./sprites/others/open_door.xpm"
+# define ENEMIE_PATH		"./sprites/others/buggy50.xpm"
 # define PLAYER_PATH		"./sprites/clean/xpm/luffy_right2.xpm"
 
 //Player

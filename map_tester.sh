@@ -23,9 +23,9 @@ echo -e "\033[1;32m \n\nnot_closed \033[0m"
 echo -e "\033[1;32m \n\nsquare_map \033[0m"
 ./so_long maps/invalid_maps/square_map.ber
 
-chmod 222 maps/invalid_maps/write_only_file.ber
-echo -e "\033[1;32m \n\nno read permissions \033[0m"
+chmod 222 ./maps/invalid_maps/write_only_file.ber
+echo -e "\033[1;32m \n\nno_read_permissions \033[0m"
 ./so_long maps/invalid_maps/write_only_file.ber
 
-echo -e "\033[1;32m \n\nmap not called map.ber \033[0m"
+echo -e "\033[1;32m \n\nmap_not_called_map.ber \033[0m"
 ./so_long maps/invalid_maps/invalid_name.bar

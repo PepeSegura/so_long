@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 18:23:26 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/13 04:02:49 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/14 01:55:38 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,17 @@ void	ft_leaks(void)
 int	main(int argc, char **argv)
 {
 	t_cosas		c;
-
-	ft_memset(&c, 0, sizeof(t_cosas));
+	// t_map		map_cpy;
+	
 	if (argc != 2)
 		return (0);
+	ft_memset(&c, 0, sizeof(t_cosas));
 	ft_get_map_size(ft_open_map(argv[1]), &c.map);
 	c.map.matrix = ft_store_map(ft_open_map(argv[1]), &c.map);
+	// map_cpy.matrix = ft_store_map(ft_open_map(argv[1]), &map_cpy);
 	read_map(&c.p, &c.map);
 	ft_valid_map(&c);
+	// validate_loop(&c.map);
 	c.meta.win_w = c.map.wide * XPM_SIZE;
 	c.meta.win_h = c.map.height * XPM_SIZE;
 	c.meta.mlx = mlx_init();

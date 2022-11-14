@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 23:11:20 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/13 07:11:35 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/13 07:23:02 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 //Constantes
 # define TRUE 1
 # define FALSE 0
-# define MOVE_COUNTER_COLOR	15921152
-# define MOVE_COUNTER_TEXT "Movimientos"
 
 //Errores
 # define INVALID_MAP	-1

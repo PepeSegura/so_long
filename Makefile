@@ -6,7 +6,7 @@
 #    By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 13:27:49 by psegura-          #+#    #+#              #
-#    Updated: 2022/11/13 07:20:54 by psegura-         ###   ########.fr        #
+#    Updated: 2022/11/13 13:06:36 by psegura-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRCS =						\
 		srcs/store_map.c	\
 		srcs/read_map.c		\
 		srcs/map_validator.c\
+		srcs/validate_path.c\
 
 OBJS = $(SRCS:.c=.o)
 
@@ -51,5 +52,8 @@ re: fclean all
 
 norma:
 	@echo 6966205b5b2024286e6f726d696e65747465207c206772657020274572726f7227207c207763202d6c29202d65712030205d5d3b207468656e206e6f726d696e657474653b20656c736520286e6f726d696e65747465207c206772657020274572726f7227293b206669 | xxd -r -p | zsh
+
+test:
+	bash ./map_tester.sh
 	
-.PHONY: all clean fclean re norma
+.PHONY: all clean fclean re norma test

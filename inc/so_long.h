@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 18:01:35 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/13 06:33:41 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/13 14:38:53 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ void	read_map(t_player *player, t_map *map);
 void	ft_check_mid_row(char *row, t_map *map);
 void	set_player(t_map *map, t_player *player, int x, int y);
 int		ft_line_lenght(char *line);
+void	validate_path(t_map *map_cpy);
+void	validate_loop(t_map *map_cpy);
 void	ft_valid_map(t_cosas *c);
 void	ft_print_error(int error_code, char *error_message);
 

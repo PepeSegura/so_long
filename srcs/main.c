@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 18:23:26 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/14 03:12:38 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/14 14:48:19 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,7 @@ int	main(int argc, char **argv)
 	if (argc != 2)
 		return (0);
 	file = argv[1];
-	// ft_game_init(&c, &map_cpy, file);
-	ft_memset(&c, 0, sizeof(t_cosas));
-	ft_memset(&map_cpy, 0, sizeof(t_map));
-	ft_get_map_size(ft_open_map(argv[1]), &c.map);
-	ft_get_map_size(ft_open_map(argv[1]), &map_cpy);
-	c.map.matrix = ft_store_map(ft_open_map(argv[1]), &c.map);
-	map_cpy.matrix = ft_store_map(ft_open_map(argv[1]), &map_cpy);
-	read_map(&c.p, &c.map);
-	read_map(&c.p, &map_cpy);
-	ft_valid_map(&c);
-	validate_loop(&map_cpy);
-	c.meta.win_w = c.map.wide * XPM_SIZE;
-	c.meta.win_h = c.map.height * XPM_SIZE;
+	ft_init(&c, &map_cpy, file);
 	c.meta.mlx = mlx_init();
 	c.meta.mlx_win = mlx_new_window(
 			c.meta.mlx, c.meta.win_w, c.meta.win_h, "so_long");
@@ -47,8 +35,7 @@ int	main(int argc, char **argv)
 	ft_draw_background(&c.map, &c.xpm, &c.meta);
 	ft_draw_game(&c.map, &c.xpm, &c.meta);
 	mlx_key_hook(c.meta.mlx_win, ft_input, &c);
-	mlx_hook(c.meta.mlx_win, ON_DESTROY, 0, ft_input, &c.meta);
+	mlx_hook(c.meta.mlx_win, DESTROY, 0, ft_exit, &c.meta);
 	mlx_loop(c.meta.mlx);
-	ft_leaks();
 	return (0);
 }

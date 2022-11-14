@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 18:21:47 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/12 19:23:25 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/14 13:51:54 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,10 @@ int	ft_input(int keycode, t_cosas *cosas)
 		ft_move(cosas, 1, 0);
 	}
 	return (0);
+}
+
+int	ft_exit(void)
+{
+	exit(EXIT_SUCCESS);
+	return (DESTROY);
 }

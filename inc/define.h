@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 23:11:20 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/14 02:52:12 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/14 13:34:11 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@
 # define LEFT		123
 # define DOWN		125
 # define RIGHT		124
-# define ON_DESTROY 17
+# define DESTROY 	17
 
 //XPM
 # define XPM_SIZE	50

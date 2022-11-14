@@ -6,23 +6,23 @@
 #    By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 13:27:49 by psegura-          #+#    #+#              #
-#    Updated: 2022/11/14 03:08:04 by psegura-         ###   ########.fr        #
+#    Updated: 2022/11/14 15:25:33 by psegura-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
 SRCS =						\
-		srcs/main.c			\
-		srcs/init.c			\
 		srcs/create_imgs.c	\
 		srcs/draw.c			\
-		srcs/utils.c		\
+		srcs/init.c			\
 		srcs/input.c		\
-		srcs/movement.c		\
-		srcs/store_map.c	\
-		srcs/read_map.c		\
+		srcs/main.c			\
 		srcs/map_validator.c\
+		srcs/movement.c		\
+		srcs/read_map.c		\
+		srcs/store_map.c	\
+		srcs/utils.c		\
 		srcs/validate_path.c\
 
 OBJS = $(SRCS:.c=.o)
@@ -30,9 +30,9 @@ OBJS = $(SRCS:.c=.o)
 LIB = libft/libft.a
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -I inc -I libft
+CFLAGS = -Wall -Wextra -Werror -I inc -I libft -g3 -fsanitize=address
 
-FLAGS_MLX = -lmlx -framework OpenGL -framework AppKit -fsanitize=address
+FLAGS_MLX = -lmlx -framework OpenGL -framework AppKit 
 
 $(NAME): $(OBJS)
 	@make -C libft

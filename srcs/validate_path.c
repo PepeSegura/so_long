@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 13:05:45 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/14 03:20:51 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/14 14:55:05 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	validate_path(t_map *map)
 				ft_replace(map, y, x);
 			x++;
 		}
-		// ft_printf("%s", map->matrix[y]);
 		y++;
 	}
 	y = 0;
@@ -81,10 +80,6 @@ void	validate_loop(t_map *map)
 
 	i = map->wide * 5;
 	while (i--)
-	{
-		// ft_printf("\033c");
 		validate_path(map);
-		// usleep(7500);
-	}
 	last_map_check(map);
 }

@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 18:01:35 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/14 03:11:46 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/14 14:50:00 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 char	*ft_strdup(const char *s1);
 
 //Open & Store Map
-void	ft_game_init(t_cosas c, t_map map_cpy, char *file);
+void	ft_init(t_cosas *c, t_map *map_cpy, char *file);
 int		ft_open_map(char *path);
 int		ft_get_map_size(int fd, t_map *map);
 char	**ft_store_map(int fd, t_map *map);
@@ -48,6 +48,7 @@ void	ft_valid_map(t_cosas *c);
 void	ft_print_error(int error_code, char *error_message);
 
 //Input & movement
+int		ft_exit(void);
 int		ft_input(int keycode, t_cosas *cosas);
 void	ft_move(t_cosas *cosas, int x, int y);
 

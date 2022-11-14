@@ -6,7 +6,7 @@
 #    By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 13:27:49 by psegura-          #+#    #+#              #
-#    Updated: 2022/11/13 13:06:36 by psegura-         ###   ########.fr        #
+#    Updated: 2022/11/14 03:08:04 by psegura-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME = so_long
 
 SRCS =						\
 		srcs/main.c			\
+		srcs/init.c			\
 		srcs/create_imgs.c	\
 		srcs/draw.c			\
 		srcs/utils.c		\
@@ -31,7 +32,7 @@ LIB = libft/libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I inc -I libft
 
-FLAGS_MLX = -lmlx -framework OpenGL -framework AppKit
+FLAGS_MLX = -lmlx -framework OpenGL -framework AppKit -fsanitize=address
 
 $(NAME): $(OBJS)
 	@make -C libft

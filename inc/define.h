@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 23:11:20 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/13 07:23:02 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/14 02:52:12 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@
 # define INVALID_C		-12
 # define INVALID_E		-13
 # define NOT_CLOSED		-14
-# define DEAD			-15
-# define WIN			-16
+# define INVALID_PATH	-15
+# define DEAD			-16
+# define WIN			-17
 
 //Map char
 # define VALID_CHARS		"01CEPB"

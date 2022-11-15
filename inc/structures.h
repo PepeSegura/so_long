@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 03:36:31 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/13 14:38:20 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/15 15:17:48 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,6 @@ typedef struct s_meta {
 	void	*mlx_win;
 	int		img_w;
 	int		img_h;
-	int		x;
-	int		y;
 	int		win_w;
 	int		win_h;
 }	t_meta;
@@ -66,7 +64,7 @@ typedef struct s_xpm {
 	void	*collectiblle;
 	void	*exit;
 	void	*player;
-	void	*enemie;
+	void	*enemy;
 }	t_xpm;
 
 typedef struct s_cosas {

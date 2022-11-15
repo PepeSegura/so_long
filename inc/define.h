@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 23:11:20 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/14 13:34:11 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/15 16:10:07 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 # define DEFINE_H
 
 //Constantes
-# define TRUE 1
-# define FALSE 0
+# define TRUE 			1
+# define FALSE 			0
+# define TEXT_COLOR		0xff6e6e
+# define NUMBER_COLOR	0xa4ffff
 
 //Errores
 # define INVALID_MAP	-1
@@ -30,6 +32,7 @@
 # define INVALID_PATH	-15
 # define DEAD			-16
 # define WIN			-17
+# define DIDNT_CHOOSED	-18
 
 //Map char
 # define VALID_CHARS		"01CEPB"
@@ -61,11 +64,11 @@
 # define EXIT_PATH			"./sprites/others/closed_door.xpm"
 # define EXIT_OPEN_PATH		"./sprites/others/open_door.xpm"
 # define ENEMIE_PATH		"./sprites/others/buggy50.xpm"
-# define PLAYER_PATH		"./sprites/clean/xpm/luffy_right2.xpm"
+# define PLAYER_PATH		"./sprites/player/luffy_right2.xpm"
 
 //Player
-# define PLAYER_UP		"./sprites/clean/xpm/luffy_up2.xpm"
-# define PLAYER_LEFT	"./sprites/clean/xpm/luffy_left2.xpm"
-# define PLAYER_DOWN	"./sprites/clean/xpm/luffy_down2.xpm"
-# define PLAYER_RIGHT	"./sprites/clean/xpm/luffy_right2.xpm"
+# define PLAYER_UP		"./sprites/player/luffy_up2.xpm"
+# define PLAYER_LEFT	"./sprites/player/luffy_left2.xpm"
+# define PLAYER_DOWN	"./sprites/player/luffy_down2.xpm"
+# define PLAYER_RIGHT	"./sprites/player/luffy_right2.xpm"
 #endif

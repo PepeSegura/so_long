@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/02 02:48:41 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/13 06:52:28 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/15 16:12:53 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ void	ft_print_error(int error_code, char *error_message)
 		ft_printf("\033cBuggy killed you :(");
 	else if (error_code == WIN)
 		ft_printf("\033cYou found the one piece!");
+	else if (error_code == DIDNT_CHOOSED)
+		ft_printf("\033cYou didn't choose a valid number");
 	else
 		ft_printf("Error\n\tError code: %d\n\t%s", error_code, error_message);
 	exit(error_code);

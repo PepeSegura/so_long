@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 18:41:15 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/13 06:59:09 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/15 15:17:48 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_draw(t_map *map, t_xpm *xpm, t_meta *meta, t_count *c)
 			xpm->player, c->j * XPM_SIZE, c->i * XPM_SIZE);
 	if (map->matrix[c->i][c->j] == ENEMIE_CHAR)
 		mlx_put_image_to_window(meta->mlx, meta->mlx_win,
-			xpm->enemie, c->j * XPM_SIZE, c->i * XPM_SIZE);
+			xpm->enemy, c->j * XPM_SIZE, c->i * XPM_SIZE);
 }
 
 void	ft_draw_background(t_map *map, t_xpm *xpm, t_meta *meta)

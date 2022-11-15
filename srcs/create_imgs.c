@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_images.c                                    :+:      :+:    :+:   */
+/*   create_imgs.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psegura- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 06:58:23 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/13 06:58:53 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/15 15:17:48 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_create_images(t_meta *meta, t_xpm *xpm)
 			&meta->img_w, &meta->img_h);
 	xpm->player = mlx_xpm_file_to_image(meta->mlx, PLAYER_PATH,
 			&meta->img_w, &meta->img_h);
-	xpm->enemie = mlx_xpm_file_to_image(meta->mlx, ENEMIE_PATH,
+	xpm->enemy = mlx_xpm_file_to_image(meta->mlx, ENEMIE_PATH,
 			&meta->img_w, &meta->img_h);
 }
 

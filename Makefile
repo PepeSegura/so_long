@@ -6,24 +6,25 @@
 #    By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 13:27:49 by psegura-          #+#    #+#              #
-#    Updated: 2022/11/14 15:25:33 by psegura-         ###   ########.fr        #
+#    Updated: 2022/11/15 15:44:03 by psegura-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
-SRCS =						\
-		srcs/create_imgs.c	\
-		srcs/draw.c			\
-		srcs/init.c			\
-		srcs/input.c		\
-		srcs/main.c			\
-		srcs/map_validator.c\
-		srcs/movement.c		\
-		srcs/read_map.c		\
-		srcs/store_map.c	\
-		srcs/utils.c		\
-		srcs/validate_path.c\
+SRCS =							\
+		srcs/create_imgs.c		\
+		srcs/draw.c				\
+		srcs/init.c				\
+		srcs/input.c			\
+		srcs/main.c				\
+		srcs/map_selector.c		\
+		srcs/map_validator.c	\
+		srcs/movement.c			\
+		srcs/read_map.c			\
+		srcs/store_map.c		\
+		srcs/utils.c			\
+		srcs/validate_path.c	\
 
 OBJS = $(SRCS:.c=.o)
 

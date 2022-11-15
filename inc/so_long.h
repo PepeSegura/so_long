@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 18:01:35 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/14 14:50:00 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/15 15:43:35 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,12 @@
 //Libft
 # include "../libft/inc/libft.h"
 
-//Leaks
-void	ft_leaks(void);
-
 //Funciones MLX
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 
 //Funciones Auxiliares
 char	*ft_strdup(const char *s1);
+char	*ft_map_selector(char *file);
 
 //Open & Store Map
 void	ft_init(t_cosas *c, t_map *map_cpy, char *file);
@@ -54,10 +52,11 @@ void	ft_move(t_cosas *cosas, int x, int y);
 
 //Draw
 void	ft_create_images(t_meta *meta, t_xpm *xpm);
+void	ft_create_images_player(t_meta *meta, t_xpm *xpm, char *path);
+void	ft_create_images_exit(t_meta *meta, t_xpm *xpm, char *path);
 void	ft_draw_background(t_map *map, t_xpm *xpm, t_meta *meta);
 void	ft_draw_game(t_map *map, t_xpm *xpm, t_meta *meta);
 void	ft_draw_player(t_map *map, t_xpm *xpm, t_meta *meta);
-void	ft_create_images_player(t_meta *meta, t_xpm *xpm, char *path);
-void	ft_create_images_exit(t_meta *meta, t_xpm *xpm, char *path);
+void	ft_print_interface(t_cosas *c);
 
 #endif

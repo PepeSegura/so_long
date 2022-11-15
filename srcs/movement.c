@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 16:08:31 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/15 15:21:00 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/15 17:34:51 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_print_interface(t_cosas *c)
 {
+	char	*n;
+
 	ft_printf("\033c");
 	ft_printf("\033c\033[0;94mMoves Counter:\n\033[0;96m%d\n\n", c->moves_count);
 	ft_printf("\033[0;94mFruit left:\n\033[0;96m%d\n\n", c->map.reqs.c_count);
@@ -24,8 +26,10 @@ void	ft_print_interface(t_cosas *c)
 		ft_printf("\033[0;96mYES\n\n");
 	mlx_string_put(c->meta.mlx, c->meta.mlx_win,
 		(c->meta.win_w / 2) - 50, 10, TEXT_COLOR, "Moves Count");
+	n = ft_itoa(c->moves_count);
 	mlx_string_put(c->meta.mlx, c->meta.mlx_win,
-		(c->meta.win_w / 2), 27, NUMBER_COLOR, ft_itoa(c->moves_count));
+		(c->meta.win_w / 2), 27, NUMBER_COLOR, n);
+	free(n);
 }
 
 void	ft_move(t_cosas *c, int x, int y)

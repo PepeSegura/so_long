@@ -6,7 +6,7 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 21:09:36 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/14 14:42:03 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/11/15 17:08:43 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,10 +80,9 @@ char	**ft_store_map(int fd, t_map *map)
 	i = 0;
 	while (i < map->height)
 	{
-		map->matrix[i] = (char *)malloc(sizeof(char) * map->wide);
+		map->matrix[i] = get_next_line(fd);
 		if (!map->matrix[i])
 			return (ft_free(map->matrix, i));
-		map->matrix[i] = get_next_line(fd);
 		i++;
 	}
 	close(fd);

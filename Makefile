@@ -6,7 +6,7 @@
 #    By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/01 13:27:49 by psegura-          #+#    #+#              #
-#    Updated: 2022/11/15 17:50:35 by psegura-         ###   ########.fr        #
+#    Updated: 2022/11/20 12:09:07 by psegura-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,4 +58,6 @@ norma:
 test:
 	bash ./map_tester.sh
 	
-.PHONY: all clean fclean re norma test
+leaks:
+	@echo 7768696c6520747275653b646f206c65616b7320736f5f6c6f6e673b20736c65657020323b20646f6e653b | xxd -r -p | zsh
+.PHONY: all clean fclean re norma test leaks

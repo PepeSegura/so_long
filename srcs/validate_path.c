@@ -6,47 +6,58 @@
 /*   By: psegura- <psegura-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 13:05:45 by psegura-          #+#    #+#             */
-/*   Updated: 2022/11/24 20:38:14 by psegura-         ###   ########.fr       */
+/*   Updated: 2022/12/01 15:50:09 by psegura-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_replace(t_map *map, int y, int x)
+void	print_map(t_map *map)
 {
-	if (map->matrix[y - 1][x] != WALL_CHAR
-		&& map->matrix[y - 1][x] != PLAYER_CHAR)
-		map->matrix[y - 1][x] = PLAYER_CHAR;
-	if (map->matrix[y + 1][x] != WALL_CHAR
-		&& map->matrix[y + 1][x] != PLAYER_CHAR)
-		map->matrix[y + 1][x] = PLAYER_CHAR;
-	if (map->matrix[y][x - 1] != WALL_CHAR
-		&& map->matrix[y][x - 1] != PLAYER_CHAR)
-		map->matrix[y][x - 1] = PLAYER_CHAR;
-	if (map->matrix[y][x + 1] != WALL_CHAR
-		&& map->matrix[y][x + 1] != PLAYER_CHAR)
-		map->matrix[y][x + 1] = PLAYER_CHAR;
-}
-
-void	validate_path(t_map *map)
-{
-	int	x;
 	int	y;
 
 	y = 0;
 	while (y < map->height)
 	{
-		x = 0;
-		while (x < map->wide - 1)
-		{
-			if (map->matrix[y][x] == PLAYER_CHAR)
-				ft_replace(map, y, x);
-			x++;
-		}
-		// ft_printf("%s", map->matrix[y]);
+		ft_printf("%s", map->matrix[y]);
 		y++;
 	}
-	y = 0;
+}
+
+	// ft_printf("\033c");
+	// print_map(map);
+	// usleep(15000);
+void	comprobar(t_map *map, int y, int x)
+{
+	map->matrix[y][x] = PLAYER_CHAR;
+	if (map->matrix[y - 1][x] != WALL_CHAR
+		&& map->matrix[y - 1][x] != PLAYER_CHAR)
+		comprobar(map, y - 1, x);
+	if (map->matrix[y + 1][x] != WALL_CHAR
+		&& map->matrix[y + 1][x] != PLAYER_CHAR)
+		comprobar(map, y + 1, x);
+	if (map->matrix[y][x - 1] != WALL_CHAR
+		&& map->matrix[y][x - 1] != PLAYER_CHAR)
+		comprobar(map, y, x - 1);
+	if (map->matrix[y][x + 1] != WALL_CHAR
+		&& map->matrix[y][x + 1] != PLAYER_CHAR)
+		comprobar(map, y, x + 1);
+}
+
+void	find_player(t_map *map, int *y, int *x)
+{
+	*y = 0;
+	while (*y < map->height)
+	{
+		*x = 0;
+		while (*x < map->wide - 1)
+		{
+			if (map->matrix[*y][*x] == PLAYER_CHAR)
+				return ;
+			(*x)++;
+		}
+		(*y)++;
+	}
 }
 
 void	last_map_check(t_map *map)
@@ -77,14 +88,10 @@ void	last_map_check(t_map *map)
 
 void	validate_loop(t_map *map)
 {
-	int	i;
+	int	x;
+	int	y;
 
-	i = map->wide * 5;
-	while (i--)
-	{
-		// ft_printf("\033c");
-		validate_path(map);
-		// usleep(150000);
-	}
+	find_player(map, &y, &x);
+	comprobar(map, y, x);
 	last_map_check(map);
 }

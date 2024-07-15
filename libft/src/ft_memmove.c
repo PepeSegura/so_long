@@ -34,7 +34,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	s = src;
 	lasts = s + (len - 1);
 	lastd = d + (len - 1);
-	if (dst == '\0' && src == '\0')
+	if (dst == 0 && src == 0)
 		return (NULL);
 	if (d < s)
 	{

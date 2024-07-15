@@ -30,14 +30,15 @@ OBJS = $(SRCS:.c=.o)
 
 LIB = libft/libft.a
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror -I inc -I libft
 
-FLAGS_MLX = -lmlx -framework OpenGL -framework AppKit 
+FLAGS_MLX = -lXext -lX11 -lm -lz
+MLX_LIB = minilibx-linux/libmlx.a
 
 $(NAME): $(OBJS)
 	@make -C libft
-	$(CC) $(CFLAGS) $(FLAGS_MLX) $(OBJS) $(LIB) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) $(FLAGS_MLX) $(LIB) $(MLX_LIB) -o $(NAME)
 	@echo "🏂 so_long Done 🏂"
 
 all: $(NAME)

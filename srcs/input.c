@@ -14,6 +14,7 @@
 
 int	ft_input(int keycode, t_cosas *cosas)
 {
+	printf("%d\n", keycode);
 	if (keycode == ESC)
 		exit(EXIT_SUCCESS);
 	if (keycode == W || keycode == UP)
